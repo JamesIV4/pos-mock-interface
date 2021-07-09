@@ -7,6 +7,30 @@
 <link rel="stylesheet" href="styles.31d6cfe0d16ae931b73c.css"></head>
 <body>
   <app-root></app-root>
-<script src="runtime.d06b409ea8b2b0d1655a.js" defer></script><script src="polyfills.c323f19b2a6041457a2b.js" defer></script><script src="main.d89b7fd496fff86863e5.js" defer></script>
+
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-app.js"></script>
+
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+  <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-analytics.js"></script>
+
+  <script>
+      // Your web app's Firebase configuration
+      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+      var firebaseConfig = {
+          apiKey: "AIzaSyD7uvl2RmKA3ylBBKMZohOi9JOKlfr6Vag",
+          authDomain: "pos-mock-database.firebaseapp.com",
+          projectId: "pos-mock-database",
+          storageBucket: "pos-mock-database.appspot.com",
+          messagingSenderId: "185556480229",
+          appId: "1:185556480229:web:32245eef5bc555f496e40c",
+          measurementId: "G-EGDKV6XMCS"
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      firebase.analytics();
+  </script>
+<script src="runtime.d06b409ea8b2b0d1655a.js" defer></script><script src="polyfills.c323f19b2a6041457a2b.js" defer></script><script src="main.c33a0664a3d6e633c99c.js" defer></script>
 
 </body></html>
