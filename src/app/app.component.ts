@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { environment } from '../environments/environment';
+import { globalVariables } from './app.globals';
 
 @Component({
 	selector: 'app-root',
@@ -8,5 +8,5 @@ import { environment } from '../environments/environment';
 })
 export class AppComponent {
 	title = 'posMockInterface';
-	variables = environment.variables;
+	variables = globalVariables;
 }

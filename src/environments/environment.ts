@@ -4,11 +4,6 @@
 
 export const environment = {
 	production: false,
-
-	// Runtime varibles
-	variables: {
-		testVariable: 'This is a test variable.'
-	}
 };
 
 /*
