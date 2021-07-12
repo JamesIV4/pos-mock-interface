@@ -1,3 +1,8 @@
 export const environment = {
-  production: true
+  production: true,
+
+	// Runtime varibles
+	variables: {
+		testVariable: 'This is a test variable.'
+	}
 };
