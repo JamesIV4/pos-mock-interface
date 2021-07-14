@@ -1,22 +1,48 @@
 <div class="container">
-	<h1 (click)="toggleOpen($event,'closed')">Entrees</h1>
+	<h1 (click)="toggleOpen($event,'closed')">
+		Entrees
+		<mat-icon>expand_more</mat-icon>
+	</h1>
 	<ul class="list">
 		<li class="list-item" *ngFor="let entree of data.menu.entrees">
-			<img [attr.src]="entree.imgPath" [alt]="entree.alt">
+			<img
+				[attr.src]="entree.imgPath"
+				[alt]="entree.alt"
+			>
 			<p [innerHTML]="entree.name"></p>
 		</li>
 	</ul>
-	<h1 (click)="toggleOpen($event,'closed')">Sides</h1>
+
+	<h1 (click)="toggleOpen($event,'closed')">
+		Sides
+		<mat-icon>expand_more</mat-icon>
+	</h1>
 	<ul class="list">
-		<li class="list-item" *ngFor="let side of data.menu.sides">
-			<img [attr.src]="side.imgPath" [alt]="side.alt">
+		<li
+			class="list-item"
+			*ngFor="let side of data.menu.sides"
+		>
+			<img
+				[attr.src]="side.imgPath"
+				[alt]="side.alt"
+			>
 			<p [innerHTML]="side.name"></p>
 		</li>
 	</ul>
-	<h1 (click)="toggleOpen($event,'closed')">Soft drinks</h1>
+
+	<h1 (click)="toggleOpen($event,'closed')">
+		Soft drinks
+		<mat-icon>expand_more</mat-icon>
+	</h1>
 	<ul class="list">
-		<li class="list-item" *ngFor="let drink of data.menu.drinks.softDrinks">
-			<img [attr.src]="drink.imgPath" [alt]="drink.alt">
+		<li
+			class="list-item"
+			*ngFor="let drink of data.menu.drinks.softDrinks"
+		>
+			<img
+				[attr.src]="drink.imgPath"
+				[alt]="drink.alt"
+			>
 			<p [innerHTML]="drink.name"></p>
 		</li>
 	</ul>
