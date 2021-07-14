@@ -1,6 +1,11 @@
+
+
 .container {
 	h1 {
 		margin-top: 40px;
+		background-color: rgb(243, 243, 243);
+		border-bottom: 5px solid rgb(226, 226, 226);
+		padding: 5px 5px 5px 10px;
 	}
 
 	.list {
@@ -9,16 +14,23 @@
 		flex-wrap: wrap;
 		justify-content: center;
 		list-style: none;
+		overflow: hidden;
 		padding: 0;
 		text-align: center;
-		width: 800px;
+		max-width: 800px;
+		transition: height 0.5s;
 	
 		.list-item {
+
+			-moz-box-shadow: 0 0 2px #a8a8a8, inset 0 0 10px #ececec;
+			-webkit-box-shadow: 0 0 2px #a8a8a8, inset 0 0 10px #ececec;
 			align-items: center;
 			border-radius: 10px;
 			border: 1px solid lightgrey;
+			box-shadow: 0 0 2px #a8a8a8, inset 0 0 10px #ececec;
 			display: flex;
 			flex-direction: column;
+			font-weight: 700;
 			height: 200px;
 			justify-content: space-evenly;
 			margin: 10px;
