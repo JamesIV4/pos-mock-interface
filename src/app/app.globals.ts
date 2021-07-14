@@ -1,4 +1,12 @@
 // Store global runtime varibales here
+
+// interface Item {
+// 	id: number;
+// 	name: string;
+// 	imgPath: string;
+// 	price: number;
+// }
+
 export const globalVariables = {
 	testVariable: 'This is a test variable.',
 	users: {},

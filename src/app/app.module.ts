@@ -5,10 +5,12 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 
 import { AppComponent } from './app.component';
+import { ItemPickerComponent } from './item-picker/item-picker.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ItemPickerComponent
   ],
   imports: [
     BrowserModule,
