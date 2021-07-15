@@ -16,22 +16,25 @@ export class ItemPickerComponent implements OnInit {
 
 	ngOnInit(): void {}
 
-	// Use a class to track the state of the list, opening and closing with a height adjustment
-	toggleOpen(event: any, className: string) {
+	// Use a class to track the state of the list, opening and closing with a CSS transition on height
+	animateOpenClose(event: any, className: string) {
 		const hasClass = event.target.classList.contains(className);
 
-		console.dir(event.target.nextSibling);
-
+		// If 'closed' class is present
 		if (hasClass) {
-			event.target.classList.remove(className);
+			event.target.classList.remove(className); // Remove 'closed' class
+			event.target.nextSibling.style.height = event.target.nextSibling.scrollHeight + 'px';
 
-			event.target.nextSibling.style.height = event.target.nextSibling.scrollHeight + 'px';
+			// After animation is done playing, remove height to keep responsive behavior of list
+			setTimeout(function animCleanup() {
+				event.target.nextSibling.style.removeProperty('height');
+			}, 500);
 		} else {
-			event.target.classList.add(className);
+			event.target.classList.add(className); // Add 'closed' class
 			
-			// Fix for first-time animation not showing due to missing height property
+			// Before animation plays, set the height property so the transition will play properly
 			event.target.nextSibling.style.height = event.target.nextSibling.scrollHeight + 'px';
-			setTimeout(function handle() {
+			setTimeout(function beginAnim() {
 				event.target.nextSibling.style.height = '0px';
 			}, 1);
 		}
