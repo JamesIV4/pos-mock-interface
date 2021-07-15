@@ -12,8 +12,7 @@ import { OrderStatusComponent } from './order-status/order-status.component';
 import { OrderListComponent } from './order-list/order-list.component';
 
 const routes: Routes = [
-	{ path: 'main', component: ItemPickerComponent },
-	{ path: '', redirectTo: '/main', pathMatch: 'full' },
+	{ path: '', component: ItemPickerComponent },
 	{ path: 'orders', component: OrderListComponent },
 ]
 
