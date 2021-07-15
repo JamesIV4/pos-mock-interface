@@ -7,11 +7,13 @@ import { MatIconModule } from '@angular/material/icon';
 
 import { AppComponent } from './app.component';
 import { ItemPickerComponent } from './item-picker/item-picker.component';
+import { OrderStatusComponent } from './order-status/order-status.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ItemPickerComponent
+    ItemPickerComponent,
+    OrderStatusComponent
   ],
   imports: [
     BrowserModule,

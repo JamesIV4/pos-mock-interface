@@ -18,21 +18,33 @@ export class ItemPickerComponent implements OnInit {
 
 	// Use a class to track the state of the list, opening and closing with a CSS transition on height
 	animateOpenClose(event: any, className: string) {
-		const hasClass = event.target.classList.contains(className);
+		let headerButton: any;
+
+		// Choose the correct target to deal with bubbling
+		switch (event.target.nodeName) {
+			case 'H1':
+				headerButton = event.target.parentElement;
+				break;
+			case 'MAT-ICON':
+				headerButton = event.target.parentElement.parentElement;
+				break;
+		}
+
+		const hasClass = headerButton.classList.contains(className);
 
 		// If 'closed' class is present
 		if (hasClass) {
-			event.target.classList.remove(className); // Remove 'closed' class
-			event.target.nextSibling.style.height = event.target.nextSibling.scrollHeight + 'px';
+			headerButton.classList.remove(className); // Remove 'closed' class
+			headerButton.nextSibling.style.height = headerButton.nextSibling.scrollHeight + 'px';
 
 			// After animation is done playing, remove height property to keep responsive behavior of list
-			setTimeout(() => {event.target.nextSibling.style.removeProperty('height')}, 500);
+			setTimeout(() => {headerButton.nextSibling.style.removeProperty('height')}, 500);
 		} else {
-			event.target.classList.add(className); // Add 'closed' class
+			headerButton.classList.add(className); // Add 'closed' class
 			
 			// Before animation plays, set the height property so the transition will play properly
-			event.target.nextSibling.style.height = event.target.nextSibling.scrollHeight + 'px';
-			setTimeout(() => {event.target.nextSibling.style.height = '0px'}, 1);
+			headerButton.nextSibling.style.height = headerButton.nextSibling.scrollHeight + 'px';
+			setTimeout(() => {headerButton.nextSibling.style.height = '0px'}, 1);
 		}
 	}
 }

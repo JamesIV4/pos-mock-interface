@@ -1,49 +1,73 @@
 <div class="container">
-	<h1 (click)="animateOpenClose($event,'closed')">
-		Entrees
-		<mat-icon>expand_more</mat-icon>
-	</h1>
+	<button
+		aria-label="Collapsible heading"
+		(click)="animateOpenClose($event,'closed')"
+	>
+		<h1>
+			Entrees
+			<mat-icon>expand_more</mat-icon>
+		</h1>
+	</button>
 	<ul class="list">
-		<li class="list-item" *ngFor="let entree of data.menu.entrees">
-			<img
-				[attr.src]="entree.imgPath"
-				[alt]="entree.alt"
-			>
-			<p [innerHTML]="entree.name"></p>
+		<li
+			class="list-item"
+			*ngFor="let entree of data.menu.entrees"
+		>
+			<button>
+				<img
+					[attr.src]="entree.imgPath"
+					[alt]="entree.alt"
+				>
+				<p [innerHTML]="entree.name"></p>
+			</button>
 		</li>
 	</ul>
 
-	<h1 (click)="animateOpenClose($event,'closed')">
-		Sides
-		<mat-icon>expand_more</mat-icon>
-	</h1>
+	<button
+		aria-label="Collapsible heading"
+		(click)="animateOpenClose($event,'closed')"
+	>
+		<h1>
+			Sides
+			<mat-icon>expand_more</mat-icon>
+		</h1>
+	</button>
 	<ul class="list">
 		<li
 			class="list-item"
 			*ngFor="let side of data.menu.sides"
 		>
-			<img
-				[attr.src]="side.imgPath"
-				[alt]="side.alt"
-			>
-			<p [innerHTML]="side.name"></p>
+			<button>
+				<img
+					[attr.src]="side.imgPath"
+					[alt]="side.alt"
+				>
+				<p [innerHTML]="side.name"></p>
+			</button>
 		</li>
 	</ul>
 
-	<h1 (click)="animateOpenClose($event,'closed')">
-		Soft drinks
-		<mat-icon>expand_more</mat-icon>
-	</h1>
+	<button
+		aria-label="Collapsible heading"
+		(click)="animateOpenClose($event,'closed')"
+	>
+		<h1>
+			Soft drinks
+			<mat-icon>expand_more</mat-icon>
+		</h1>
+	</button>
 	<ul class="list">
 		<li
 			class="list-item"
 			*ngFor="let drink of data.menu.drinks.softDrinks"
 		>
-			<img
-				[attr.src]="drink.imgPath"
-				[alt]="drink.alt"
-			>
-			<p [innerHTML]="drink.name"></p>
+			<button>
+				<img
+					[attr.src]="drink.imgPath"
+					[alt]="drink.alt"
+				>
+				<p [innerHTML]="drink.name"></p>
+			</button>
 		</li>
 	</ul>
 </div>
