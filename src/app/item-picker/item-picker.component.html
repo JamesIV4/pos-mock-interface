@@ -37,7 +37,7 @@
 			class="list-item"
 			*ngFor="let side of data.menu.sides"
 		>
-			<button>
+			<button (click)="addItem(side)">
 				<img
 					[attr.src]="side.imgPath"
 					[alt]="side.alt"
@@ -61,7 +61,7 @@
 			class="list-item"
 			*ngFor="let drink of data.menu.drinks.softDrinks"
 		>
-			<button>
+			<button (click)="addItem(drink)">
 				<img
 					[attr.src]="drink.imgPath"
 					[alt]="drink.alt"
