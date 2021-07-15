@@ -7,6 +7,7 @@
 		h1 {
 			background-color: rgb(243, 243, 243);
 			border-bottom: 5px solid rgb(226, 226, 226);
+			cursor: pointer;
 			margin-top: 10px;
 			padding: 5px 5px 5px 10px;
 			position: relative;
@@ -45,19 +46,24 @@
 			align-items: center;
 			border-radius: 10px;
 			border: 2px solid rgb(211, 211, 211);
+			cursor: pointer;
 			display: flex;
 			flex-direction: column;
 			height: 200px;
 			justify-content: space-evenly;
 			margin: 10px;
 			padding: 5px 5px 0 5px;
+			transition: transform 25ms;
 			user-select: none;
 			width: 200px;
-			transition: transform 25ms;
 			
 			box-shadow: 1px 1px 0 rgb(180, 180, 180), inset 0 0 10px #ececec;
 			-moz-box-shadow: 1px 1px 0 rgb(180, 180, 180), inset 0 0 10px #ececec;
 			-webkit-box-shadow: 1px 1px 0 rgb(180, 180, 180), inset 0 0 10px #ececec;
+
+			button {
+				cursor: pointer;
+			}
 
 			&:hover {
 				border: 2px solid #505050;
