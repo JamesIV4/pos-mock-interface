@@ -3,11 +3,11 @@
 	<h1>POS Mockup</h1>
 	<div class="spacer"></div>
 
-	<a class="nav-link" href="/pos-mock-interface">Main</a>
-	<a class="nav-link" href="/pos-mock-interface/orders">Orders</a>
+	<a class="nav-link" routerLink="/">Main</a>
+	<a class="nav-link" routerLink="/orders">Orders</a>
 </div>
 
 <div class="content" role="main">
-	<item-picker></item-picker>
+	<router-outlet></router-outlet>
 	<order-status></order-status>
 </div>

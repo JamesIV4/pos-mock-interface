@@ -13,7 +13,7 @@
 			class="list-item"
 			*ngFor="let entree of data.menu.entrees"
 		>
-			<button>
+			<button (click)="addItem(entree)">
 				<img
 					[attr.src]="entree.imgPath"
 					[alt]="entree.alt"

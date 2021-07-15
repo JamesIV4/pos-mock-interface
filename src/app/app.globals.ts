@@ -1,21 +1,30 @@
 // Store global runtime varibales here
 
-// interface Item {
-// 	id: number;
-// 	name: string;
-// 	imgPath: string;
-// 	price: number;
-// }
-
 export const globalVariables = {
-	testVariable: 'This is a test variable.',
 	users: [
 		{
 			id: 0,
 			name: 'Default'
 		}
 	],
-	regEx: '/<sup>&reg;<\/sup>/g',
+	orders:	{
+		currentOrder: 0,
+		list: [
+			{
+				id: 0,
+				status: 'In Progress',
+				items: [
+					{
+						id: 1,
+						name: 'Chick-fil-A<sup>&reg;</sup> Deluxe Chicken Sandwich',
+						alt: 'Chick-fil-A Deluxe Chicken Sandwich',
+						imgPath: 'https://www.cfacdn.com/img/order/menu/Mobile/Entrees/Parent/cfaDeluxe_mobile.png',
+						price: 4.59
+					}
+				],
+			},
+		],
+	},
 	menu: {
 		entrees: [
 			{

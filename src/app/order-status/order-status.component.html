@@ -1,1 +1,37 @@
-<p>order-status works!</p>
+<div
+	class="order-status"
+	(click)="expandTray($event,'expanded')"
+	[ngClass]="{'hide' : data.orders.list[currentOrder].items.length === 0}"
+>
+	<h1 class="status-header">
+		{{data.orders.list[currentOrder].items.length}} item{{data.orders.list[currentOrder].items.length !== 1 ? 's' : ''}} in order.
+		<span *ngIf="orderTotal > 0"> Total: ${{orderTotal}}</span>
+	</h1>
+
+	<ul
+		class="item-list">
+		<li
+			class="item"
+			*ngFor="let item of data.orders.list[currentOrder].items"
+		>
+			<mat-icon
+				class="close"
+				(click)="removeItem(item)"
+			>
+				close
+			</mat-icon>
+			<div class="image-container">
+				<img
+					class="image"
+					[attr.src]="item.imgPath"
+					[alt]="item.alt"
+				>
+			</div>
+			<p
+				class="name"
+				[innerHTML]="item.name"
+			></p>
+		</li>
+	</ul>
+</div>
+<div class="spacer"></div>

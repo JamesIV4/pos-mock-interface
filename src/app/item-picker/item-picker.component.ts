@@ -1,5 +1,5 @@
-import { globalVariables } from './../app.globals';
 import { Component, OnInit } from '@angular/core';
+import { globalVariables } from './../app.globals';
 
 @Component({
 	selector: 'item-picker',
@@ -8,13 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ItemPickerComponent implements OnInit {
 	data = globalVariables;
-	panelEntreesOpenState = false;
-	panelSidesOpenState = false;
-	panelDrinksOpenState = false;
+	currentOrder = this.data.orders.currentOrder;
 
 	constructor() { }
 
 	ngOnInit(): void {}
+
+	addItem(passedItem: any) {
+		this.data.orders.list[this.currentOrder].items.push(passedItem);
+	}
 
 	// Use a class to track the state of the list, opening and closing with a CSS transition on height
 	animateOpenClose(event: any, className: string) {
