@@ -63,6 +63,23 @@
 
 			button {
 				cursor: pointer;
+
+				img {
+					max-height: 50%;
+					max-width: 100%;
+				}
+	
+				p {
+					// Button element overrides the main styles for some reason
+					font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+					font-size: 14px;
+					font-weight: 700;
+					transform: scale(1) !important;
+	
+					@media screen and (max-width: 767px) {
+						font-size: 12px;
+					}
+				}
 			}
 
 			&:hover {
@@ -75,23 +92,6 @@
 				-moz-box-shadow: inset 0 0 0 1px #5187ff, inset 0 0 10px #ececec;
 				-webkit-box-shadow: inset 0 0 0 1px #5187ff, inset 0 0 10px #ececec;
 				transform: scale(0.99);
-			}
-	
-			img {
-				max-height: 50%;
-				max-width: 100%;
-			}
-
-			p {
-				// Button element overrides the main styles for some reason
-				font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-				font-size: 14px;
-				font-weight: 700;
-				transform: scale(1) !important;
-
-				@media screen and (max-width: 767px) {
-					font-size: 12px;
-				}
 			}
 
 			@media screen and (max-width: 767px) {

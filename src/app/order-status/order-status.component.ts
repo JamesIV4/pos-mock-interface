@@ -18,7 +18,7 @@ export class OrderStatusComponent implements OnInit {
 	get orderTotal() {
 		let total = 0;
 
-		this.data.orders.list[this.currentOrder].items.forEach((item) => {
+		this.data.orders.list[this.currentOrder].items.forEach((item: any) => {
 			total += item.price;
 		});
 
@@ -72,7 +72,13 @@ export class OrderStatusComponent implements OnInit {
 		}
 	}
 
+	// Re-calculate the tray height and set it
 	updateTrayHeight() {
-		const trayElem = document.querySelector('.order-status');
+		const trayElem: any = document.querySelector('.order-status');
+
+		if (trayElem.classList.contains('expanded')) {
+			// Wait 1ms so the updated height has time to be checked properly after an item is added
+			setTimeout(() => {trayElem.style.height = trayElem.scrollHeight + 'px'}, 1);
+		}
 	}
 }

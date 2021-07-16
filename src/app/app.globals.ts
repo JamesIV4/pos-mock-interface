@@ -13,15 +13,7 @@ export const globalVariables = {
 			{
 				id: 0,
 				status: 'In Progress',
-				items: [
-					{
-						id: 1,
-						name: 'Chick-fil-A<sup>&reg;</sup> Deluxe Chicken Sandwich',
-						alt: 'Chick-fil-A Deluxe Chicken Sandwich',
-						imgPath: 'https://www.cfacdn.com/img/order/menu/Mobile/Entrees/Parent/cfaDeluxe_mobile.png',
-						price: 4.59
-					}
-				],
+				items: [] as any,
 			},
 		],
 	},

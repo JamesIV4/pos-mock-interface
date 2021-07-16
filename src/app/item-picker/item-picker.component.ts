@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { globalVariables } from './../app.globals';
+import { OrderStatusComponent } from '../order-status/order-status.component';
 
 @Component({
 	selector: 'item-picker',
@@ -9,13 +10,16 @@ import { globalVariables } from './../app.globals';
 export class ItemPickerComponent implements OnInit {
 	data = globalVariables;
 	currentOrder = this.data.orders.currentOrder;
+	orderStatus = new OrderStatusComponent();
 
 	constructor() { }
 
 	ngOnInit(): void {}
 
+	// Add clicked item to the order list
 	addItem(passedItem: any) {
 		this.data.orders.list[this.currentOrder].items.push(passedItem);
+		this.orderStatus.updateTrayHeight()
 	}
 
 	// Use a class to track the state of the list, opening and closing with a CSS transition on height

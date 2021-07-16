@@ -5,7 +5,7 @@
 >
 	<h1 class="status-header">
 		{{data.orders.list[currentOrder].items.length}} item{{data.orders.list[currentOrder].items.length !== 1 ? 's' : ''}} in order.
-		<span *ngIf="orderTotal > 0"> Total: ${{orderTotal}}</span>
+		<span *ngIf="orderTotal > 0"> Subtotal: ${{orderTotal}}</span>
 	</h1>
 
 	<ul

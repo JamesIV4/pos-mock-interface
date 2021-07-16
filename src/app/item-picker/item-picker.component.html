@@ -12,8 +12,9 @@
 		<li
 			class="list-item"
 			*ngFor="let entree of data.menu.entrees"
+			(click)="addItem(entree)"
 		>
-			<button (click)="addItem(entree)">
+			<button>
 				<img
 					[attr.src]="entree.imgPath"
 					[alt]="entree.alt"
@@ -36,8 +37,9 @@
 		<li
 			class="list-item"
 			*ngFor="let side of data.menu.sides"
+			(click)="addItem(side)"
 		>
-			<button (click)="addItem(side)">
+			<button>
 				<img
 					[attr.src]="side.imgPath"
 					[alt]="side.alt"
@@ -60,8 +62,9 @@
 		<li
 			class="list-item"
 			*ngFor="let drink of data.menu.drinks.softDrinks"
+			(click)="addItem(drink)"
 		>
-			<button (click)="addItem(drink)">
+			<button>
 				<img
 					[attr.src]="drink.imgPath"
 					[alt]="drink.alt"
