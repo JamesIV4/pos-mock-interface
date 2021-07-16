@@ -1,7 +1,6 @@
 <div
 	class="order-status"
 	(click)="expandTray($event,'expanded')"
-	[ngClass]="{'hide' : data.orders.list[currentOrder].items.length === 0}"
 >
 	<h1 class="status-header">
 		{{data.orders.list[currentOrder].items.length}} item{{data.orders.list[currentOrder].items.length !== 1 ? 's' : ''}} in order.

@@ -16,14 +16,38 @@
 	width: 100%;
 
 	.status-header {
-		display: block;
+		display: flex;
 		height: 55px !important;
+		justify-content: center;
 		text-align: center;
 		width: 100%;
+
+		span {
+			margin-left: 10px;
+		}
+
+		&:before {
+			@extend .material-icons;
+			font-size: 40px !important;
+			content: 'expand_more';
+			display: block;
+			height:40px;
+			margin-right: 10px;
+			transform: rotate(180deg);
+			transition: transform 200ms;
+		}
 
 		@media screen and (max-width: 767px) {
 			font-size: 20px;
 			margin-bottom: 15px;
+		}
+	}
+
+	&.expanded {
+		.status-header {
+			&:before {
+				transform: rotate(0);
+			}
 		}
 	}
 
@@ -74,6 +98,23 @@
 		}
 
 	}
+}
+
+.material-icons {
+	direction: ltr;
+	display: inline-block;
+	font-family: 'Material Icons';
+	font-feature-settings: 'liga';
+	font-size: 24px;
+	font-style: normal;
+	font-weight: normal;
+	letter-spacing: normal;
+	line-height: 1;
+	text-transform: none;
+	white-space: nowrap;
+	word-wrap: normal;
+	-webkit-font-feature-settings: 'liga';
+	-webkit-font-smoothing: antialiased;
 }
 
 .spacer {
