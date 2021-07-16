@@ -31,10 +31,14 @@
 			font-size: 40px !important;
 			content: 'expand_more';
 			display: block;
-			height:40px;
 			margin-right: 10px;
 			transform: rotate(180deg);
 			transition: transform 200ms;
+
+			@media screen and (max-width: 767px) {
+				font-size: 32px !important;
+				margin-right: 3px;
+			}
 		}
 
 		@media screen and (max-width: 767px) {
