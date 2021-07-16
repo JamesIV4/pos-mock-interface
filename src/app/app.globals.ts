@@ -94,7 +94,7 @@ export const globalVariables = {
 				name: 'Gluten Free Bun',
 				alt: 'Gluten Free Bun',
 				imgPath: 'https://www.cfacdn.com/img/order/menu/Mobile/Modifiers/Sandwich_mod/gluten_free_bun.png',
-				price: 1.70
+				price: 1.69
 			},
 			{
 				id: 11,

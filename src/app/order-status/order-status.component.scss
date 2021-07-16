@@ -60,9 +60,11 @@
 	.item-list {
 		display: block;
 		list-style: none;
+		max-width: 460px;
 		padding: 0 5px;
 		position: absolute;
 		top: 60px;
+		width: 95%;
 
 		.item {
 			display: flex;
@@ -101,8 +103,15 @@
 				position: relative;
 				right: 0;
 			}
-		}
 
+			.space {
+				flex: 1;
+			}
+
+			.price {
+				font-weight: 700;
+			}
+		}
 	}
 }
 
