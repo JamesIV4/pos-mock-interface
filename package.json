@@ -4,9 +4,9 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build --base-href=/pos-mock-interface/",
+    "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "deploy": "ng deploy --base-href=/pos-mock-interface/",
+    "deploy": "ng deploy",
     "test": "ng test"
   },
   "private": true,
