@@ -3,7 +3,7 @@
 	(click)="expandTray($event,'expanded')"
 >
 	<h1 class="status-header">
-		{{data.orders.list[currentOrder].items.length}} item{{data.orders.list[currentOrder].items.length !== 1 ? 's' : ''}} in order.
+		{{data.orders.queue[currentOrder].items.length}} item{{data.orders.queue[currentOrder].items.length !== 1 ? 's' : ''}} in order.
 		<span *ngIf="orderTotal > 0"> Subtotal: ${{orderTotal}}</span>
 	</h1>
 
@@ -11,11 +11,11 @@
 		class="item-list">
 		<li
 			class="item"
-			*ngFor="let item of data.orders.list[currentOrder].items"
+			*ngFor="let item of data.orders.queue[currentOrder].items"
 		>
 			<mat-icon
 				class="close"
-				(click)="removeItem(item)"
+				(click)="cart.updateCart('remove', item)"
 			>
 				close
 			</mat-icon>

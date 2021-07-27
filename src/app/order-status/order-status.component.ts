@@ -1,3 +1,4 @@
+import { CartService } from './../cart.service';
 import { Component, OnInit } from '@angular/core';
 import { globalVariables } from './../app.globals';
 
@@ -10,7 +11,9 @@ export class OrderStatusComponent implements OnInit {
 	data = globalVariables;
 	currentOrder = this.data.orders.currentOrder;
 
-	constructor() { }
+	constructor(
+		public cart: CartService,
+	) { }
 
 	ngOnInit(): void {
 	}
@@ -18,18 +21,11 @@ export class OrderStatusComponent implements OnInit {
 	get orderTotal() {
 		let total = 0;
 
-		this.data.orders.list[this.currentOrder].items.forEach((item: any) => {
+		this.data.orders.queue[this.currentOrder].items.forEach((item: any) => {
 			total += item.price;
 		});
 
 		return Math.round(total * 100) / 100;
-	}
-
-	removeItem(passedItem: any) {
-		const itemIndex = this.data.orders.list[this.currentOrder].items.indexOf(passedItem);
-		console.log(itemIndex);
-
-		this.data.orders.list[this.currentOrder].items.splice(itemIndex, 1);
 	}
 
 	// Use a class to track the state of the tray, opening and closing with a CSS transition on height
@@ -62,23 +58,10 @@ export class OrderStatusComponent implements OnInit {
 		// If 'expanded' class is present
 		if (hasClass) {
 			trayElem.classList.remove(className); // Remove 'expanded' class
-			
 			trayElem.style.height = '55px'
 		} else {
-
 			trayElem.classList.add(className); // Add 'expanded' class
 			trayElem.style.height = trayElem.scrollHeight + 25 + 'px';
-			
-		}
-	}
-
-	// Re-calculate the tray height and set it
-	updateTrayHeight() {
-		const trayElem: any = document.querySelector('.order-status');
-
-		if (trayElem.classList.contains('expanded')) {
-			// Wait 1ms so the updated height has time to be checked properly after an item is added
-			setTimeout(() => {trayElem.style.height = trayElem.scrollHeight + 'px'}, 1);
 		}
 	}
 }

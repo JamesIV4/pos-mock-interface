@@ -12,7 +12,7 @@
 		<li
 			class="list-item"
 			*ngFor="let entree of data.menu.entrees"
-			(click)="addItem(entree)"
+			(click)="cart.updateCart('add', entree)"
 		>
 			<button>
 				<img
@@ -37,7 +37,7 @@
 		<li
 			class="list-item"
 			*ngFor="let side of data.menu.sides"
-			(click)="addItem(side)"
+			(click)="cart.updateCart('add', side)"
 		>
 			<button>
 				<img
@@ -62,7 +62,7 @@
 		<li
 			class="list-item"
 			*ngFor="let drink of data.menu.drinks.softDrinks"
-			(click)="addItem(drink)"
+			(click)="cart.updateCart('add', drink)"
 		>
 			<button>
 				<img

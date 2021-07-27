@@ -9,7 +9,7 @@ export const globalVariables = {
 	],
 	orders:	{
 		currentOrder: 0,
-		list: [
+		queue: [
 			{
 				id: 0,
 				status: 'In Progress',

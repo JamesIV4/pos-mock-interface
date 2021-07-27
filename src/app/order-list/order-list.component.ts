@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { globalVariables } from './../app.globals';
+// import { globalVariables } from './../app.globals';
 
 @Component({
 	selector: 'order-list',
@@ -7,8 +7,8 @@ import { globalVariables } from './../app.globals';
 	styleUrls: ['./order-list.component.scss']
 })
 export class OrderListComponent implements OnInit {
-	data = globalVariables;
-	currentOrder = this.data.orders.currentOrder;
+	// data = globalVariables;
+	// currentOrder = this.data.orders.currentOrder;
 
 	constructor() { }
 

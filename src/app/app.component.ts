@@ -1,5 +1,4 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-import { globalVariables } from './app.globals';
 
 @Component({
 	selector: 'app-root',
@@ -9,5 +8,4 @@ import { globalVariables } from './app.globals';
 })
 export class AppComponent {
 	title = 'posMockInterface';
-	variables = globalVariables;
 }
