@@ -4,10 +4,10 @@
 >
 	<h1 class="status-header">
 		{{database.data.orders.queue[cart.currentOrder].items.length}} item{{database.data.orders.queue[cart.currentOrder].items.length !== 1 ? 's' : ''}}{{database.data.orders.queue[cart.currentOrder].items.length === 0 ? ' in order' : ''}}.
-		<span *ngIf="orderTotal > 0"> Subtotal: ${{orderTotal}}</span>
+		<span *ngIf="cart.subtotal > 0"> Subtotal: ${{cart.roundToTenth(cart.subtotal)}}</span>
 		<button
 			*ngIf="database.data.orders.queue[cart.currentOrder].items.length > 0"
-			class="finalize"
+			class="blue-button"
 			[routerLink]="['/place-order']"
 		>
 			Finalize Order

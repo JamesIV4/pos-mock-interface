@@ -23,12 +23,34 @@ export class CartService {
 		}
 	}
 
+	roundToTenth(value: number) {
+		return Math.round(value * 100) / 100;
+	}
+
 	get currentOrder() {
 		return this.database.data.orders.currentOrder;
 	}
 
+	get subtotal() {
+		let subtotal = 0;
+
+		this.database.data.orders.queue[this.currentOrder].items.forEach((item: any) => {
+			subtotal += item.price;
+		});
+
+		return subtotal;
+	}
+
+	get taxes() {
+		return this.subtotal * this.database.data.taxes.default;
+	}
+
+	get total() {
+		return this.subtotal + (this.subtotal * this.database.data.taxes.default);
+	}
+
 	constructor(
 		private orderStatus: OrderStatusBarService,
-		private database: DatabaseService
+		private database: DatabaseService,
 	) { }
 }

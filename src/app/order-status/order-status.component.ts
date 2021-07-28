@@ -17,16 +17,6 @@ export class OrderStatusComponent implements OnInit {
 	ngOnInit(): void {
 	}
 
-	get orderTotal() {
-		let total = 0;
-
-		this.database.data.orders.queue[this.cart.currentOrder].items.forEach((item: any) => {
-			total += item.price;
-		});
-
-		return Math.round(total * 100) / 100;
-	}
-
 	// Use a class to track the state of the tray, opening and closing with a CSS transition on height
 	expandTray(event: any, className: string) {
 		let trayElem: any;
