@@ -11,7 +11,7 @@
 	<ul class="list">
 		<li
 			class="list-item"
-			*ngFor="let entree of data.menu.entrees"
+			*ngFor="let entree of database.data.menu.entrees"
 			(click)="cart.updateCart('add', entree)"
 		>
 			<button>
@@ -36,7 +36,7 @@
 	<ul class="list">
 		<li
 			class="list-item"
-			*ngFor="let side of data.menu.sides"
+			*ngFor="let side of database.data.menu.sides"
 			(click)="cart.updateCart('add', side)"
 		>
 			<button>
@@ -61,7 +61,7 @@
 	<ul class="list">
 		<li
 			class="list-item"
-			*ngFor="let drink of data.menu.drinks.softDrinks"
+			*ngFor="let drink of database.data.menu.drinks.softDrinks"
 			(click)="cart.updateCart('add', drink)"
 		>
 			<button>
@@ -74,3 +74,4 @@
 		</li>
 	</ul>
 </div>
+<order-status></order-status>

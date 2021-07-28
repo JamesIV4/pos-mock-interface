@@ -251,4 +251,7 @@ export const globalVariables = {
 			],
 		},
 	},
+	taxes: {
+		default: .08
+	}
 };

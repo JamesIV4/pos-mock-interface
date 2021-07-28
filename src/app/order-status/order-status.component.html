@@ -3,36 +3,15 @@
 	(click)="expandTray($event,'expanded')"
 >
 	<h1 class="status-header">
-		{{data.orders.queue[currentOrder].items.length}} item{{data.orders.queue[currentOrder].items.length !== 1 ? 's' : ''}} in order.
+		{{database.data.orders.queue[cart.currentOrder].items.length}} item{{database.data.orders.queue[cart.currentOrder].items.length !== 1 ? 's' : ''}}{{database.data.orders.queue[cart.currentOrder].items.length === 0 ? ' in order' : ''}}.
 		<span *ngIf="orderTotal > 0"> Subtotal: ${{orderTotal}}</span>
-	</h1>
-
-	<ul
-		class="item-list">
-		<li
-			class="item"
-			*ngFor="let item of data.orders.queue[currentOrder].items"
+		<button
+			*ngIf="database.data.orders.queue[cart.currentOrder].items.length > 0"
+			class="finalize"
+			[routerLink]="['/place-order']"
 		>
-			<mat-icon
-				class="close"
-				(click)="cart.updateCart('remove', item)"
-			>
-				close
-			</mat-icon>
-			<div class="image-container">
-				<img
-					class="image"
-					[attr.src]="item.imgPath"
-					[alt]="item.alt"
-				>
-			</div>
-			<p
-				class="name"
-				[innerHTML]="item.name"
-			></p>
-			<div class="space"></div>
-			<p class="price">${{item.price}}</p>
-		</li>
-	</ul>
+			Finalize Order
+		</button>
+	</h1>
+	<list-display></list-display>
 </div>
-<div class="spacer"></div>

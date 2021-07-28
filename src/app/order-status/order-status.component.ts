@@ -1,6 +1,6 @@
+import { DatabaseService } from './../database.service';
 import { CartService } from './../cart.service';
 import { Component, OnInit } from '@angular/core';
-import { globalVariables } from './../app.globals';
 
 @Component({
 	selector: 'order-status',
@@ -8,11 +8,10 @@ import { globalVariables } from './../app.globals';
 	styleUrls: ['./order-status.component.scss']
 })
 export class OrderStatusComponent implements OnInit {
-	data = globalVariables;
-	currentOrder = this.data.orders.currentOrder;
 
 	constructor(
 		public cart: CartService,
+		public database: DatabaseService,
 	) { }
 
 	ngOnInit(): void {
@@ -21,7 +20,7 @@ export class OrderStatusComponent implements OnInit {
 	get orderTotal() {
 		let total = 0;
 
-		this.data.orders.queue[this.currentOrder].items.forEach((item: any) => {
+		this.database.data.orders.queue[this.cart.currentOrder].items.forEach((item: any) => {
 			total += item.price;
 		});
 
@@ -61,7 +60,7 @@ export class OrderStatusComponent implements OnInit {
 			trayElem.style.height = '55px'
 		} else {
 			trayElem.classList.add(className); // Add 'expanded' class
-			trayElem.style.height = trayElem.scrollHeight + 25 + 'px';
+			trayElem.style.height = trayElem.scrollHeight + 'px';
 		}
 	}
 }

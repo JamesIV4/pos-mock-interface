@@ -26,6 +26,28 @@
 			margin-left: 10px;
 		}
 
+		.finalize {
+			background-color: #16a9ff;
+			border-radius: 4px;
+			border: 1px solid #469cce;
+			color: #fff;
+			font-size: 14px;
+			font-weight: 700;
+			height: 40px;
+			margin-left: 15px;
+			padding: 0 12px;
+			text-shadow: 1px 1px 4px #0000008c;
+
+			&:hover {
+				background-color: lighten(#16a9ff, 10%);
+				text-shadow: 1px 1px 4px #000000;
+			}
+
+			&:active {
+				background-color: darken(#16a9ff, 10%);
+			}
+		}
+
 		&:before {
 			@extend .material-icons;
 			font-size: 40px !important;
@@ -56,63 +78,10 @@
 			}
 		}
 	}
+}
 
-	.item-list {
-		display: block;
-		list-style: none;
-		max-width: 460px;
-		padding: 0 5px;
-		position: absolute;
-		top: 60px;
-		width: 95%;
-
-		.item {
-			display: flex;
-			flex-direction: row;
-			align-items: center;
-			height: 35px;
-
-			&:not(:first-child) {
-				padding-top: 5px;
-			}
-
-			&:not(:last-child) {
-				border-bottom: 1px solid rgb(158, 158, 158);
-				padding-bottom: 5px;
-			}
-
-			.image-container {
-				width: 50px;
-				text-align: center;
-				margin-right: 10px;
-
-				.image {
-					display: inline;
-					max-height: 35px;
-					max-width: 50px;
-				}
-			}
-
-			.name {
-				font-size: 14px;
-				font-weight: 700;
-			}
-
-			.close {
-				cursor: pointer;
-				position: relative;
-				right: 0;
-			}
-
-			.space {
-				flex: 1;
-			}
-
-			.price {
-				font-weight: 700;
-			}
-		}
-	}
+.spacer {
+	height: 55px;
 }
 
 .material-icons {
@@ -130,8 +99,4 @@
 	word-wrap: normal;
 	-webkit-font-feature-settings: 'liga';
 	-webkit-font-smoothing: antialiased;
-}
-
-.spacer {
-	height: 55px;
 }

@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ItemPickerComponent } from './item-picker.component';
+import { PageFinalizeOrderComponent } from './page-finalize-order.component';
 
-describe('ItemPickerComponent', () => {
-  let component: ItemPickerComponent;
-  let fixture: ComponentFixture<ItemPickerComponent>;
+describe('PageFinalizeOrderComponent', () => {
+  let component: PageFinalizeOrderComponent;
+  let fixture: ComponentFixture<PageFinalizeOrderComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ItemPickerComponent ]
+      declarations: [ PageFinalizeOrderComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ItemPickerComponent);
+    fixture = TestBed.createComponent(PageFinalizeOrderComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

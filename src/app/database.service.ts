@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { globalVariables } from './app.globals';
 
 @Injectable({
   providedIn: 'root'
@@ -6,4 +7,8 @@ import { Injectable } from '@angular/core';
 export class DatabaseService {
 
   constructor() { }
+
+  get data() {
+		return globalVariables;
+	}
 }

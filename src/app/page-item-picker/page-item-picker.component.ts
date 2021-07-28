@@ -1,17 +1,17 @@
-import { CartService } from './../cart.service';
+import { DatabaseService } from './../database.service';
+import { CartService } from '../cart.service';
 import { Component, OnInit } from '@angular/core';
-import { globalVariables } from './../app.globals';
 
 @Component({
-	selector: 'item-picker',
-	templateUrl: './item-picker.component.html',
-	styleUrls: ['./item-picker.component.scss']
+	selector: 'page-item-picker',
+	templateUrl: './page-item-picker.component.html',
+	styleUrls: ['./page-item-picker.component.scss']
 })
-export class ItemPickerComponent implements OnInit {
-	data = globalVariables;
+export class PageItemPickerComponent implements OnInit {
 
 	constructor(
 		public cart: CartService,
+		public database: DatabaseService,
 	) { }
 
 	ngOnInit(): void {}

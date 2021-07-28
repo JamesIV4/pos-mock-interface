@@ -7,12 +7,28 @@ app-root {
 	-moz-osx-font-smoothing: grayscale;
 }
 
-item-picker {
+page-item-picker {
 	width: 100%;
 }
 
-order-list {
+page-order-list {
 	width: 100%;
+}
+
+page-finalize-order {
+	width: 100%;
+}
+
+list-display {
+	max-width: 460px;
+	width: 100%;
+
+	&.relative {
+		.item-list {
+			position: relative;
+			top: 0;
+		}
+	}
 }
 
 h1,
