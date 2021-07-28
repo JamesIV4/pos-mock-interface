@@ -9,6 +9,7 @@
 	display: flex;
 	flex-direction: column;
 	height: 55px;
+	justify-content: flex-start;
 	left: 0;
 	max-height: 92vh;
 	position: fixed;
@@ -16,9 +17,10 @@
 	width: 100%;
 
 	.status-header {
+		align-items: center;
 		display: flex;
-		height: 55px !important;
 		justify-content: center;
+		min-height: 40px;
 		text-align: center;
 		width: 100%;
 
@@ -49,7 +51,6 @@
 
 		@media screen and (max-width: 767px) {
 			font-size: 18px;
-			margin-bottom: 15px;
 		}
 	}
 
