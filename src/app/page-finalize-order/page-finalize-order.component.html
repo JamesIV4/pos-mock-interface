@@ -5,9 +5,9 @@
 		<list-display class="relative"></list-display>
 	</div>
 	<div class="right">
-		<h3>Subtotal:<span>{{cart.subtotal > 0 ? ' $' + cart.roundToTenth(cart.subtotal) : ''}}</span></h3>
-		<h3>Taxes:<span>{{cart.taxes > 0 ? ' $' + cart.roundToTenth(cart.taxes) : ''}}</span></h3>
-		<h2>Total:<span>{{cart.total > 0 ? ' $' + cart.roundToTenth(cart.total) : ''}}</span></h2>
+		<h3>Subtotal:<span> ${{cart.roundToTenth(cart.subtotal)}}</span></h3>
+		<h3>Taxes:<span> ${{cart.roundToTenth(cart.taxes)}}</span></h3>
+		<h2>Total:<span> ${{cart.roundToTenth(cart.total)}}</span></h2>
 		<button
 			class="blue-button"
 		>

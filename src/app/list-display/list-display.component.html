@@ -26,4 +26,10 @@
 			${{item.price}}
 		</p>
 	</li>
+	<li
+		*ngIf="database.data.orders.queue[currentOrder].items.length === 0"
+		class="item empty"
+	>
+		Cart is empty...
+	</li>
 </ul>
