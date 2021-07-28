@@ -24,7 +24,7 @@ export class CartService {
 	}
 
 	roundToTenth(value: number) {
-		return Math.round(value * 100) / 100;
+		return value.toFixed(2);
 	}
 
 	get currentOrder() {
