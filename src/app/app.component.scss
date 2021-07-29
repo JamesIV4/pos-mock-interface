@@ -26,8 +26,9 @@ list-display {
 	max-width: 460px;
 	width: 100%;
 
-	&.relative {
+	&.finalize {
 		.item-list {
+			max-height: none;
 			position: relative;
 			top: 0;
 		}

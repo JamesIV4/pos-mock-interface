@@ -41,8 +41,9 @@ export class OrderStatusComponent implements OnInit {
 			case 'MAT-ICON':
 				return;
 		}
-
+		
 		const hasClass = trayElem.classList.contains(className);
+		const listElem = trayElem.childNodes[1].childNodes[0];
 
 		// If 'expanded' class is present
 		if (hasClass) {
@@ -50,7 +51,7 @@ export class OrderStatusComponent implements OnInit {
 			trayElem.style.height = '55px'
 		} else {
 			trayElem.classList.add(className); // Add 'expanded' class
-			trayElem.style.height = trayElem.scrollHeight + 'px';
+			trayElem.style.height = listElem.clientHeight + 73 + 'px';
 		}
 	}
 }

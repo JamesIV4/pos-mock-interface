@@ -15,6 +15,10 @@ export class ListDisplayComponent implements OnInit {
 		public database: DatabaseService,
 	) { }
 
+	identify(index: number) {
+		return index;
+	}
+
 	ngOnInit(): void {
 	}
 

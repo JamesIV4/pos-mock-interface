@@ -7,15 +7,14 @@ import { Injectable } from '@angular/core';
 })
 export class CartService {
 
-	updateCart(operation: string, passedItem: object) {
+	updateCart(operation: string, passedItem: object, index: number) {
 		switch (operation) {
 			case 'add':
 				this.database.data.orders.queue[this.database.data.orders.currentOrder].items.push(passedItem);
 				this.orderStatus.updateTrayHeight();
 				break;
 			case 'remove':
-				const itemIndex = this.database.data.orders.queue[this.database.data.orders.currentOrder].items.indexOf(passedItem);
-				this.database.data.orders.queue[this.database.data.orders.currentOrder].items.splice(itemIndex, 1);
+				this.database.data.orders.queue[this.database.data.orders.currentOrder].items.splice(index, 1);
 				break;
 		
 			default:
