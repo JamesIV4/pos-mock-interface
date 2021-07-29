@@ -8,16 +8,14 @@ import { Injectable } from '@angular/core';
 export class CartService {
 
 	updateCart(operation: string, passedItem: object, index: number) {
-		// Use the reverse of the index supplied, since the list is rendered in reverse. This is to avoid using unshift for adding items to the top
-		const indexReverse = this.database.data.orders.queue[this.database.data.orders.currentOrder].items.length - 1 - index;
 
 		switch (operation) {
 			case 'add':
-				this.database.data.orders.queue[this.database.data.orders.currentOrder].items.push(passedItem);
+				this.database.data.orders.queue[this.database.data.orders.currentOrder].items.unshift(passedItem);
 				this.orderStatus.updateTrayHeight();
 				break;
 				case 'remove':
-					this.database.data.orders.queue[this.database.data.orders.currentOrder].items.splice(indexReverse, 1);
+					this.database.data.orders.queue[this.database.data.orders.currentOrder].items.splice(index, 1);
 					this.orderStatus.updateTrayHeight();
 				break;
 		
