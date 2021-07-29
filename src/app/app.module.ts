@@ -16,6 +16,7 @@ const routes: Routes = [
 	{ path: '', component: PageItemPickerComponent },
 	{ path: 'orders', component: PageOrderListComponent },
 	{ path: 'place-order', component: PageFinalizeOrderComponent },
+	{ path: '**', component: PageItemPickerComponent },
 ]
 
 @NgModule({
